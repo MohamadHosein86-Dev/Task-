@@ -35,16 +35,13 @@ function MealsPage() {
       <button onClick={() => navigate(-1)} className="mb-4 px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">
         ← Back
       </button>
-
       <h1 className="text-2xl font-bold mb-4">{decodedCategory ? `Meals: ${decodedCategory}` : "Meals"}</h1>
-
       <SearchBar onSearch={onSearch} />
 
-      {loading && <p>Loading...</p>}
+      {loading && <p className="text-center mt-80 text-2xl text-gray-500">Loading...</p>}
       {error && <p className="text-red-500">{error}</p>}
 
       {mealsToShow.length === 0 && !loading && <p>No meals found.</p>}
-
       {mealsToShow.length > 0 && (
         <div className="grid gap-3 grid-cols-[repeat(auto-fill,minmax(180px,1fr))]">
           {mealsToShow.map((meal: MealShort) => (

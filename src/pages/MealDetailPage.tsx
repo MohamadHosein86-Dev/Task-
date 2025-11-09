@@ -17,7 +17,7 @@ function MealDetailPage() {
         ← Back
       </button>
 
-      {loading && <p className="text-center text-gray-500">Loading...</p>}
+      {loading && <p className="text-center mt-80 text-2xl text-gray-500">Loading...</p>}
       {error && <p className="text-red-500 text-center">{error}</p>}
 
       {data && (

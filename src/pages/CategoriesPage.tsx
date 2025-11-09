@@ -9,8 +9,7 @@ function CategoriesPage() {
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mt-20 ">Categories</h1>
-
-      {loading && <p>Loading categories...</p>}
+      {loading && <p className="text-center mt-80 text-2xl text-gray-500">Loading categories...</p>}
       {error && <p className="text-red-500">{error}</p>}
       {!loading && !error && categories.length === 0 && <p>No categories found.</p>}
       {!loading && !error && categories.length > 0 && <CategoryGrid categories={categories} />}
