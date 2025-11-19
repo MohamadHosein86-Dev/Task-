@@ -1,9 +1,9 @@
 import { getCategories } from "../api/mealApi";
-import CategoryGrid from "../components/CategoryGrid";
+import CategoryMealGrid from "../components/CategoryMealGrid";
 import useFetch from "../hooks/useFetch";
 import type { Category } from "../types/types";
 
-function CategoriesPage() {
+function CategoriesMealPage() {
   const { data, loading, error } = useFetch<Category[]>(() => getCategories(), []);
   const categories = data;
 
@@ -13,9 +13,9 @@ function CategoriesPage() {
       {loading && <p className="text-center mt-80 text-2xl text-gray-500">Loading categories...</p>}
       {error && <p className="text-red-500">{error}</p>}
       {!loading && !error && categories?.length === 0 && <p>No categories found.</p>}
-      {!loading && !error && categories && <CategoryGrid categories={categories} />}
+      {!loading && !error && categories && <CategoryMealGrid categories={categories} />}
     </div>
   );
 }
 
-export default CategoriesPage;
+export default CategoriesMealPage;

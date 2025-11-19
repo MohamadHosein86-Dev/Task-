@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useFavorites } from "../context/FavoritContext";
 import type { MealShort } from "../types/types";
 
-function MealCard(props: { meal: MealShort }) {
+function MealsFoodCard(props: { meal: MealShort }) {
   const { meal } = props;
   const { toggle, isFav } = useFavorites();
 
@@ -23,4 +23,4 @@ function MealCard(props: { meal: MealShort }) {
   );
 }
 
-export default MealCard;
+export default MealsFoodCard;

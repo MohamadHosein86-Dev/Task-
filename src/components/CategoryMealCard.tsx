@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import type { Category } from "../types/types";
 
-function CategoryCard(props: { cat: Category }) {
+function CategoryMealCard(props: { cat: Category }) {
   const { cat } = props;
 
   return (
@@ -16,4 +16,4 @@ function CategoryCard(props: { cat: Category }) {
   );
 }
 
-export default CategoryCard;
+export default CategoryMealCard;

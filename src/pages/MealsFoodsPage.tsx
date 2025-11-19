@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getMealsByCategory, searchMeals } from "../api/mealApi";
-import MealCard from "../components/MealCard";
+import MealCard from "../components/MealsFoodCard";
 import SearchBar from "../components/SearchBar";
 import type { MealShort } from "../types/types";
 import useFetch from "../hooks/useFetch";
 
-function MealsPage() {
+function MealsFoodsPage() {
   const navigate = useNavigate();
   const [searchResults, setSearchResults] = useState<MealShort[] | null>(null);
 
@@ -53,4 +53,4 @@ function MealsPage() {
   );
 }
 
-export default MealsPage;
+export default MealsFoodsPage;

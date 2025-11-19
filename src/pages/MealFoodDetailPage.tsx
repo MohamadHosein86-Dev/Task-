@@ -3,7 +3,7 @@ import { getMealDetails } from "../api/mealApi";
 import useFetch from "../hooks/useFetch";
 import type { MealDetail } from "../types/types";
 
-function MealDetailPage() {
+function MealFoodDetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
@@ -44,4 +44,4 @@ function MealDetailPage() {
   );
 }
 
-export default MealDetailPage;
+export default MealFoodDetailPage;

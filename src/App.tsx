@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CategoriesPage from "./pages/CategoriesPage";
-import MealsPage from "./pages/MealsPage";
-import MealDetailPage from "./pages/MealDetailPage";
+import CategoriesMealPage from "./pages/CategoriesPage";
+import MealsFoodsPage from "./pages/MealsFoodsPage";
+import MealFoodDetailPage from "./pages/MealFoodDetailPage";
 import Header from "./components/Header";
 import { FavoritesProvider } from "./context/FavoritContext";
 
@@ -12,9 +12,9 @@ const App: React.FC = () => (
       <Header />
       <main className="contaner">
         <Routes>
-          <Route path="/" element={<CategoriesPage />} />
-          <Route path="/category/:category" element={<MealsPage />} />
-          <Route path="/meal/:id" element={<MealDetailPage />} />
+          <Route path="/" element={<CategoriesMealPage />} />
+          <Route path="/category/:category" element={<MealsFoodsPage />} />
+          <Route path="/meal/:id" element={<MealFoodDetailPage />} />
         </Routes>
       </main>
     </FavoritesProvider>

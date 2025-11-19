@@ -1,7 +1,7 @@
-import CategoryCard from "./CategoryCard";
+import CategoryCard from "./CategoryMealCard";
 import type { Category } from "../types/types";
 
-function CategoryGrid(props: { categories: Category[] }) {
+function CategoryMealGrid(props: { categories: Category[] }) {
   const { categories } = props;
 
   return (
@@ -13,4 +13,4 @@ function CategoryGrid(props: { categories: Category[] }) {
   );
 }
 
-export default CategoryGrid;
+export default CategoryMealGrid;
