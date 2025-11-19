@@ -1,4 +1,4 @@
-const BASE = "https://www.themealdb.com/api/json/v1/1";
+const BASE =  import.meta.env.VITE_API_URL;
 
 async function safeJson(res: Response) {
   if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
@@ -42,7 +42,7 @@ export async function getMealDetails(id: string) {
   try {
     const res = await fetch(`${BASE}/lookup.php?i=${id}`);
     const json = await safeJson(res);
-    return json.meals && json.meals[0] ? json.meals[0] : null;
+    return json.meals ? json.meals[0]  : null;
   } catch  {
     console.error(`Failed to get meal details for id ${id}:`);
     return null;

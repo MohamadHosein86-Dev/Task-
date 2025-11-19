@@ -10,10 +10,10 @@ function MealsPage() {
   const navigate = useNavigate();
   const [searchResults, setSearchResults] = useState<MealShort[] | null>(null);
 
-  const { category } = useParams<{ category?: string }>();
-  const decodedCategory = category ? decodeURIComponent(category) : "";
+  const { category } = useParams<{ category: string }>();
+  const categoryName = category ? category : "";
 
-  const { data, loading, error } = useFetch<MealShort[] | null>(() => getMealsByCategory(decodedCategory), [decodedCategory]);
+  const { data, loading, error } = useFetch<MealShort[]>(() => getMealsByCategory(categoryName), [categoryName]);
 
   async function onSearch(query: string) {
     if (!query) {
@@ -35,7 +35,7 @@ function MealsPage() {
       <button onClick={() => navigate(-1)} className="mb-4 px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">
         ← Back
       </button>
-      <h1 className="text-2xl font-bold mb-4">{decodedCategory ? `Meals: ${decodedCategory}` : "Meals"}</h1>
+      <h1 className="text-2xl font-bold mb-4">{categoryName ? `Meals: ${categoryName}` : "Meals"}</h1>
       <SearchBar onSearch={onSearch} />
 
       {loading && <p className="text-center mt-80 text-2xl text-gray-500">Loading...</p>}

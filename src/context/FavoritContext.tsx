@@ -3,7 +3,6 @@ import type { Favorite } from "../types/types";
 
 const LS_KEY = "meal_favs_v1";
 
-// ساده و جونیوری
 type FavCtx = {
   favorites: Favorite[];
   add: (meal: Favorite) => void;
@@ -14,7 +13,7 @@ type FavCtx = {
 
 const FavoriteContext = createContext<FavCtx | undefined>(undefined);
 
-export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export function FavoritesProvider({ children }: { children: React.ReactNode }) {
   const [favorites, setFavorites] = useState<Favorite[]>([]);
 
   useEffect(() => {
@@ -44,9 +43,8 @@ export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({ chi
   const isFav = (id: string) => favorites.some((f) => f.id === id);
 
   return <FavoriteContext.Provider value={{ favorites, add, remove, toggle, isFav }}>{children}</FavoriteContext.Provider>;
-};
+}
 
-// هوک ساده برای استفاده
 export function useFavorites() {
   const ctx = useContext(FavoriteContext);
   if (!ctx) throw new Error("useFavorites must be used inside FavoritesProvider");
