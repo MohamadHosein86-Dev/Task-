@@ -1,6 +1,6 @@
 1. Your Code
 
-1.1 Walk me through how the search feature works
+1.1 Walk me through how the search feature works?
 The search feature is inside the MealsPage component. When the user types something and clicks the search button, it calls the searchMeals() function from my API file. That function fetches results from TheMealDB API using async/await. I store the results in a state called searchResults and display them on the page. If the search input is empty, it just shows the meals from the selected category again.
 
 1.2 How do you save favorites to localStorage?
